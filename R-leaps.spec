@@ -4,7 +4,7 @@
 #
 Name     : R-leaps
 Version  : 3.0
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/leaps_3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/leaps_3.0.tar.gz
 Summary  : Regression Subset Selection
