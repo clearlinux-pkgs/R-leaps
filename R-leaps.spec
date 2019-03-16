@@ -4,14 +4,14 @@
 #
 Name     : R-leaps
 Version  : 3.0
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/leaps_3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/leaps_3.0.tar.gz
 Summary  : Regression Subset Selection
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-leaps-lib
-BuildRequires : clr-R-helpers
+Requires: R-leaps-lib = %{version}-%{release}
+BuildRequires : buildreq-R
 
 %description
 This package performs an exhaustive search for the best subsets of a given
@@ -38,11 +38,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523313037
+export SOURCE_DATE_EPOCH=1552766702
 
 %install
+export SOURCE_DATE_EPOCH=1552766702
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523313037
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -77,8 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library leaps|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  leaps || :
 
 
 %files
@@ -103,7 +102,7 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/leaps/help/paths.rds
 /usr/lib64/R/library/leaps/html/00Index.html
 /usr/lib64/R/library/leaps/html/R.css
-/usr/lib64/R/library/leaps/libs/symbols.rds
+/usr/lib64/R/library/leaps/tests/nested.R
 
 %files lib
 %defattr(-,root,root,-)
