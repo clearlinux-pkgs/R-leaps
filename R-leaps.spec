@@ -4,7 +4,7 @@
 #
 Name     : R-leaps
 Version  : 3.1
-Release  : 27
+Release  : 28
 URL      : https://cran.r-project.org/src/contrib/leaps_3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/leaps_3.1.tar.gz
 Summary  : Regression Subset Selection
@@ -32,21 +32,22 @@ lib components for the R-leaps package.
 
 %prep
 %setup -q -c -n leaps
+cd %{_builddir}/leaps
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1579277894
+export SOURCE_DATE_EPOCH=1589825367
 
 %install
-export SOURCE_DATE_EPOCH=1579277894
+export SOURCE_DATE_EPOCH=1589825367
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
