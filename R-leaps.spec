@@ -4,7 +4,7 @@
 #
 Name     : R-leaps
 Version  : 3.1
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/leaps_3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/leaps_3.1.tar.gz
 Summary  : Regression Subset Selection
@@ -39,10 +39,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589825367
+export SOURCE_DATE_EPOCH=1619366305
 
 %install
-export SOURCE_DATE_EPOCH=1589825367
+export SOURCE_DATE_EPOCH=1619366305
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -109,4 +109,3 @@ R CMD check --no-manual --no-examples --no-codoc leaps || :
 %defattr(-,root,root,-)
 /usr/lib64/R/library/leaps/libs/leaps.so
 /usr/lib64/R/library/leaps/libs/leaps.so.avx2
-/usr/lib64/R/library/leaps/libs/leaps.so.avx512
