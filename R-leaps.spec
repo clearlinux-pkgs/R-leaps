@@ -7,7 +7,7 @@
 #
 Name     : R-leaps
 Version  : 3.2
-Release  : 54
+Release  : 55
 URL      : https://cran.r-project.org/src/contrib/leaps_3.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/leaps_3.2.tar.gz
 Summary  : Regression Subset Selection
